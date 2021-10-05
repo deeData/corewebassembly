@@ -1,4 +1,3 @@
-using CoreWebApp.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -18,9 +17,10 @@ namespace CoreWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             //apply filter to all controllers
-            services.AddControllers(options => {
-                options.Filters.Add<Version1DiscontinueResourceFilter>();
-            });
+            //services.AddControllers(options => {
+            //    options.Filters.Add<Version1DiscontinueResourceFilter>();
+            //});
+            services.AddControllers();
         }
 
 

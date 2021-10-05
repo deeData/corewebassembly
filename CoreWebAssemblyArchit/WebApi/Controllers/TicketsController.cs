@@ -1,5 +1,4 @@
-﻿using CoreWebApp.Filters;
-using CoreWebApp.Models;
+﻿using Core.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -45,7 +44,7 @@ namespace CoreWebApp.Controllers
         //v2 uses action filters so that change won't apply to v1
         [Route("V2/")]
         //add action filter attribute
-        [Ticket_EnsureEnteredDate]
+        //[Ticket_EnsureEnteredDate]
         public IActionResult PostV2([FromBody] Ticket ticket)
         {
             //Ok automatically serializes the obj into json
