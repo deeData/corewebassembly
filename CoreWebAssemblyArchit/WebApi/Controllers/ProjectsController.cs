@@ -24,17 +24,17 @@ namespace CoreWebApp.Controllers
 
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             //400s user error, 500s server error
-            return Ok(db.Projects.ToList());
+            return Ok(await db.Projects.ToListAsync());
         }
 
         [HttpGet("{id}")]
         //get from route is the id
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var project = db.Projects.Find(id);
+            var project = await db.Projects.FindAsync(id);
             if (project == null)
             {
                 //404
@@ -44,10 +44,10 @@ namespace CoreWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Project project)
+        public async Task<IActionResult> Post([FromBody] Project project)
         {
             db.Projects.Add(project);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             //this helper function finds the created obj and returns the obj with 201
             return CreatedAtAction(nameof(GetById),
                 new { id = project.ProjectId },
@@ -57,14 +57,14 @@ namespace CoreWebApp.Controllers
 
         [HttpPut("{id}")]
         //updates are PUT
-        public IActionResult Put(int id, Project project)
+        public async Task<IActionResult> Put(int id, Project project)
         {
             if (id != project.ProjectId) return BadRequest();
             //to set that it is modified
             db.Entry(project).State = EntityState.Modified;
             try
             {
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
             catch (Exception)
             {
@@ -79,14 +79,14 @@ namespace CoreWebApp.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Create(int id)
+        public async Task<IActionResult> Create(int id)
         {
             //a soft delete is avaliable which is used in most production, but below is full delete
-            var project = db.Projects.Find(id);
+            var project = await db.Projects.FindAsync(id);
             if (project == null)
                 return NotFound();
             db.Projects.Remove(project);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             //return deleted object
             return Ok(project);
         }
@@ -96,10 +96,10 @@ namespace CoreWebApp.Controllers
         //api/projects/{pid}/tickets?tid={tid}
         [HttpGet]
         [Route("{pid}/tickets")]
-        public IActionResult GetProjectTicket(int pid)
+        public async Task<IActionResult> GetProjectTicket(int pid)
         {
             //looking for FK so need to use Where and not Find.
-            var tickets = db.Tickets.Where(t => t.ProjectId == pid).ToList();
+            var tickets = await db.Tickets.Where(t => t.ProjectId == pid).ToListAsync();
             if (tickets == null || tickets.Count <= 0)
                 return NotFound();
             

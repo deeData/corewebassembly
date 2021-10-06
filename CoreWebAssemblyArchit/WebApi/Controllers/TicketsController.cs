@@ -28,18 +28,18 @@ namespace CoreWebApp.Controllers
         //attribute routing
         //[Route("api/tickets")]
         //IActionResult returns all types- is generic
-        public IActionResult Get() 
+        public async Task<IActionResult> Get() 
         {
-            return Ok(db.Tickets.ToList());
+            return Ok(await db.Tickets.ToListAsync());
             //400s user error, 500s server error
             //return Ok("Reading all the tix");
         }
 
         [HttpGet("{id}")]
         //[Route("api/tickets/{id}")]
-        public IActionResult GetById(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            var ticket = db.Tickets.Find(id);
+            var ticket = await db.Tickets.FindAsync(id);
             if (ticket == null)
                 return NotFound();
 
@@ -47,11 +47,11 @@ namespace CoreWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Ticket ticket)
+        public async Task<IActionResult> Post([FromBody] Ticket ticket)
         {
             db.Tickets.Add(ticket);
             //do a try catch at SaveChanges
-            db.SaveChanges();
+            await db.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetById),
                     new { id = ticket.TicketId },
@@ -83,7 +83,7 @@ namespace CoreWebApp.Controllers
 
         [HttpPut("{id}")]
         //[Route("api/tickets")]
-        public IActionResult Put(int id, [FromBody] Ticket ticket)
+        public async Task<IActionResult> Put(int id, [FromBody] Ticket ticket)
         {
             if (id != ticket.TicketId) return BadRequest();
 
@@ -91,11 +91,11 @@ namespace CoreWebApp.Controllers
 
             try
             {
-                db.SaveChanges();
+                await db.SaveChangesAsync();
             }
             catch
             {
-                if (db.Tickets.Find(id) == null)
+                if (await db.Tickets.FindAsync(id) == null)
                     return NotFound();
                 throw;
             }
@@ -105,13 +105,13 @@ namespace CoreWebApp.Controllers
 
         [HttpDelete("{id}")]
         //[Route("api/tickets/{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var ticket = db.Tickets.Find(id);
+            var ticket = await db.Tickets.FindAsync(id);
             if (ticket == null) return NotFound();
-
+            //marked as deleted
             db.Tickets.Remove(ticket);
-            db.SaveChanges();
+            await db.SaveChangesAsync ();
 
             return Ok(ticket);
         }
