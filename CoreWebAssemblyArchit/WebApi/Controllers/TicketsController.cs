@@ -12,7 +12,7 @@ namespace CoreWebApp.Controllers
     [ApiVersion("1.0")]
     //decorate the class as APIController (not an MVC controller)
     [ApiController]
-    [Route("api/v{v:apiVersion}/[controller]")]
+    [Route("api/[controller]")]
     //[Version1DiscontinueResourceFilter] moved to global filter in Startup.cs
     public class TicketsController : ControllerBase //everything you need for a web API controller
     {

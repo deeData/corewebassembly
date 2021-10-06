@@ -13,11 +13,12 @@ namespace CoreWebApp.Controllers.V2
     /// <summary>
     /// API change- Description becomes a required field- implement in [action] filter pipeline
     /// </summary>
-    
+
+    //version can be pulled by query string e.g. "https://localhost:44349/api/tickets?api-version=2.0"
     [ApiVersion("2.0")]
     [ApiController]
     //ApiVersion attribute above will replace v: in Url
-    [Route("api/v{v:apiVersion}/tickets")]
+    [Route("api/tickets")]
     public class TicketsV2Controller : ControllerBase //everything you need for a web API controller
     {
         private readonly BugsContext db;
