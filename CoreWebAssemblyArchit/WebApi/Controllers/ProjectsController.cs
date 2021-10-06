@@ -13,7 +13,7 @@ namespace CoreWebApp.Controllers
     [ApiVersion("1.0")]
     //Model validation happens automatically in the ApiController
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{v:apiVersion}/[controller]")]
     public class ProjectsController : ControllerBase
     {
         private readonly BugsContext db;

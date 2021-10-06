@@ -49,7 +49,7 @@ namespace CoreWebApp
                 //if no version specified in header, then use version 1,0 (version # is specified at Controller) 1,0 means 1.0
                 options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
                 //can specify any header but usually starts with X-
-                options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
+                //options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
             });
         }
 

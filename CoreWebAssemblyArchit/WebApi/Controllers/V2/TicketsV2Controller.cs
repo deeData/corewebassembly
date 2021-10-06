@@ -16,7 +16,8 @@ namespace CoreWebApp.Controllers.V2
     
     [ApiVersion("2.0")]
     [ApiController]
-    [Route("api/tickets")]
+    //ApiVersion attribute above will replace v: in Url
+    [Route("api/v{v:apiVersion}/tickets")]
     public class TicketsV2Controller : ControllerBase //everything you need for a web API controller
     {
         private readonly BugsContext db;
