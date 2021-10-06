@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,11 +53,16 @@ namespace CoreWebApp
                 //options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
             });
 
-            //discover versioning in swagger - see documentation for version formatting options VVV has noth major and minor versioning
+            //discover versioning in swagger - see documentation for version formatting options VVV has both major and minor versioning
             services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
             //use all defaults
-            services.AddSwaggerGen();
-
+            //services.AddSwaggerGen();
+            //need to specify more than one version
+            services.AddSwaggerGen(options => {
+                //"v1" must match formatting config and swagger url (setting in swaggerUI)
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "My Web API v1", Version = "version 1" });
+                options.SwaggerDoc("v2", new OpenApiInfo { Title = "My Web API v2", Version = "version 2" });
+            });
 
 
 
@@ -85,6 +91,7 @@ namespace CoreWebApp
                 app.UseSwaggerUI(options => { 
                     //first set of definitions v1
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiName v1");
+                    options.SwaggerEndpoint("/swagger/v2/swagger.json", "WebApiName v2");
                 });
             }
 
