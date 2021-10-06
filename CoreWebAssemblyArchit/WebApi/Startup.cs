@@ -53,7 +53,7 @@ namespace CoreWebApp
             });
 
             //discover versioning in swagger - see documentation for version formatting options VVV has noth major and minor versioning
-            services.AddVersionedApiExplorer(options => options.GroupNameFormat = " 'v' VVV ");
+            services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
             //use all defaults
             services.AddSwaggerGen();
 
@@ -81,7 +81,9 @@ namespace CoreWebApp
                 //swagger in development env only
                 //configure OpenAPI
                 app.UseSwagger(); //generate documentation
-                app.UseSwaggerUI(options => { //configure url for where to generate document
+                //configure url for where to generate document
+                app.UseSwaggerUI(options => { 
+                    //first set of definitions v1
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiName v1");
                 });
             }
