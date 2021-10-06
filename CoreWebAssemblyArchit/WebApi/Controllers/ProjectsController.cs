@@ -1,5 +1,8 @@
 ﻿
+using Core.Models;
+using DataStore.EF;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +15,80 @@ namespace CoreWebApp.Controllers
     [Route("api/[controller]")]
     public class ProjectsController : ControllerBase
     {
+        private readonly BugsContext db;
+        public ProjectsController(BugsContext db)
+        {
+            this.db = db;
+        }
+
+
+
         [HttpGet]
         public IActionResult Get()
         {
             //400s user error, 500s server error
-            return Ok("Reading all the projects");
+            return Ok(db.Projects.ToList());
         }
 
         [HttpGet("{id}")]
         //get from route is the id
         public IActionResult GetById(int id)
         {
-            return Ok($"Reading project #{id}.");
+            var project = db.Projects.Find(id);
+            if (project == null)
+            {
+                //404
+                return NotFound();
+            }
+            return Ok(project);
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody] Project project)
         {
-            return Ok("Creating a project");
+            db.Projects.Add(project);
+            db.SaveChanges();
+            //this helper function finds the created obj and returns the obj with 201
+            return CreatedAtAction(nameof(GetById),
+                new { id = project.ProjectId },
+                project
+                );
         }
 
-        [HttpPut]
-        public IActionResult Put()
+        [HttpPut("{id}")]
+        //updates are PUT
+        public IActionResult Put(int id, Project project)
         {
-            return Ok("Updating a project");
+            if (id != project.ProjectId) return BadRequest();
+            //to set that it is modified
+            db.Entry(project).State = EntityState.Modified;
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                if (db.Projects.Find(id) == null)
+                    return NotFound();
+                //will return a server error 500
+                throw;
+            }
+            
+            
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Create(int id)
         {
-            return Ok($"Deleting project #{id}.");
+            //a soft delete is avaliable which is used in most production, but below is full delete
+            var project = db.Projects.Find(id);
+            if (project == null)
+                return NotFound();
+            db.Projects.Remove(project);
+            db.SaveChanges();
+            //return deleted object
+            return Ok(project);
         }
 
 
@@ -49,14 +96,14 @@ namespace CoreWebApp.Controllers
         //api/projects/{pid}/tickets?tid={tid}
         [HttpGet]
         [Route("{pid}/tickets")]
-        public IActionResult GetProjectTicket(int pid, [FromQuery] int tid)
+        public IActionResult GetProjectTicket(int pid)
         {
-            //if no query string param, tid defaults to zero
-            if (tid == 0)
-            {
-                return Ok($"Reading all tix belonging to project #{pid}.");
-            }
-            return Ok($"Reading project #{pid} and ticket #{tid}.");
+            //looking for FK so need to use Where and not Find.
+            var tickets = db.Tickets.Where(t => t.ProjectId == pid).ToList();
+            if (tickets == null || tickets.Count <= 0)
+                return NotFound();
+            
+            return Ok(tickets);
         }
 
 

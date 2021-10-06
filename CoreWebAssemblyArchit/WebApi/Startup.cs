@@ -28,6 +28,7 @@ namespace CoreWebApp
             //use in-memory db in development- created at every build
             if (_env.IsDevelopment())
             {
+                //default as Scoped lifetime
                 services.AddDbContext<BugsContext>(options =>
                 {
                     options.UseInMemoryDatabase("Bugs");

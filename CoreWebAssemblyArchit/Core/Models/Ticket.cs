@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
+    //ticket for each bug fix
     public class Ticket
     {
         public int? TicketId { get; set; }

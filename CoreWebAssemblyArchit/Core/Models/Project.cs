@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//models should not be dependent on any technology
 namespace Core.Models
 {
     public class Project
