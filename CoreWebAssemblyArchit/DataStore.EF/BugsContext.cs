@@ -20,6 +20,7 @@ namespace DataStore.EF
                 //EF knows to link Ids
                 .HasMany(p => p.Tickets)
                 .WithOne(t => t.Project)
+                //in-memory db doesn't have relational db
                 .HasForeignKey(t => t.ProjectId);
 
             //seed data, when seeding data, the auto increment id is turned off

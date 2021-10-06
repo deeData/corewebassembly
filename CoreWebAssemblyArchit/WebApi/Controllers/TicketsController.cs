@@ -1,5 +1,7 @@
 ﻿using Core.Models;
+using DataStore.EF;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,57 +15,105 @@ namespace CoreWebApp.Controllers
     //[Version1DiscontinueResourceFilter] moved to global filter in Startup.cs
     public class TicketsController : ControllerBase //everything you need for a web API controller
     {
+        private readonly BugsContext db;
+
+        public TicketsController(BugsContext db)
+        {
+            this.db = db;
+        }
+
+
+
         [HttpGet]
         //attribute routing
         //[Route("api/tickets")]
         //IActionResult returns all types- is generic
         public IActionResult Get() 
         {
+            return Ok(db.Tickets.ToList());
             //400s user error, 500s server error
-            return Ok("Reading all the tix");
+            //return Ok("Reading all the tix");
         }
 
         [HttpGet("{id}")]
         //[Route("api/tickets/{id}")]
         public IActionResult GetById(int id)
         {
-            return Ok($"Reading ticket #{id}.");
-        }
+            var ticket = db.Tickets.Find(id);
+            if (ticket == null)
+                return NotFound();
 
-        [HttpPost]
-        //[Route("api/tickets")]
-        public IActionResult PostV1([FromBody] Ticket ticket)
-        {
-            //Ok automatically serializes the obj into json
             return Ok(ticket);
         }
 
-
         [HttpPost]
-        //**********should probably be /api/V2/tickets
-        //v2 uses action filters so that change won't apply to v1
-        [Route("V2/")]
-        //add action filter attribute
-        //[Ticket_EnsureEnteredDate]
-        public IActionResult PostV2([FromBody] Ticket ticket)
+        public IActionResult Post([FromBody] Ticket ticket)
         {
-            //Ok automatically serializes the obj into json
-            return Ok(ticket);
+            db.Tickets.Add(ticket);
+            //do a try catch at SaveChanges
+            db.SaveChanges();
+
+            return CreatedAtAction(nameof(GetById),
+                    new { id = ticket.TicketId },
+                    ticket
+                );
         }
 
+        //[HttpPost]
+        ////[Route("api/tickets")]
+        //public IActionResult PostV1([FromBody] Ticket ticket)
+        //{
+        //    //Ok automatically serializes the obj into json
+        //    return Ok(ticket);
+        //}
 
-        [HttpPut]
+
+        //[HttpPost]
+        ////**********should probably be /api/V2/tickets
+        ////v2 uses action filters so that change won't apply to v1
+        //[Route("V2/")]
+        ////add action filter attribute
+        ////[Ticket_EnsureEnteredDate]
+        //public IActionResult PostV2([FromBody] Ticket ticket)
+        //{
+        //    //Ok automatically serializes the obj into json
+        //    return Ok(ticket);
+        //}
+
+
+        [HttpPut("{id}")]
         //[Route("api/tickets")]
-        public IActionResult Put()
+        public IActionResult Put(int id, [FromBody] Ticket ticket)
         {
-            return Ok("Updating a ticket.");
+            if (id != ticket.TicketId) return BadRequest();
+
+            db.Entry(ticket).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch
+            {
+                if (db.Tickets.Find(id) == null)
+                    return NotFound();
+                throw;
+            }
+
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
         //[Route("api/tickets/{id}")]
-        public IActionResult Create(int id)
+        public IActionResult Delete(int id)
         {
-            return Ok($"Deleting ticket #{id}.");
+            var ticket = db.Tickets.Find(id);
+            if (ticket == null) return NotFound();
+
+            db.Tickets.Remove(ticket);
+            db.SaveChanges();
+
+            return Ok(ticket);
         }
 
 
