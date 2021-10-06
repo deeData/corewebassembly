@@ -66,6 +66,15 @@ namespace Core.Models
         }
 
 
+        ///USED in V2 of API endpoints
+        public bool ValidateDescription() 
+        {
+            //return true if blank
+            return string.IsNullOrWhiteSpace(Description);
+        }
+
+
+
     }
 
 }

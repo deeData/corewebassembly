@@ -6,19 +6,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApi.Filters.V2;
 
-namespace CoreWebApp.Controllers
+namespace CoreWebApp.Controllers.V2
 {
-    [ApiVersion("1.0")]
-    //decorate the class as APIController (not an MVC controller)
+    /// <summary>
+    /// API change- Description becomes a required field- implement in [action] filter pipeline
+    /// </summary>
+    
+    [ApiVersion("2.0")]
     [ApiController]
-    [Route("api/[controller]")]
-    //[Version1DiscontinueResourceFilter] moved to global filter in Startup.cs
-    public class TicketsController : ControllerBase //everything you need for a web API controller
+    [Route("api/tickets")]
+    public class TicketsV2Controller : ControllerBase //everything you need for a web API controller
     {
         private readonly BugsContext db;
 
-        public TicketsController(BugsContext db)
+        public TicketsV2Controller(BugsContext db)
         {
             this.db = db;
         }
@@ -26,14 +29,9 @@ namespace CoreWebApp.Controllers
 
 
         [HttpGet]
-        //attribute routing
-        //[Route("api/tickets")]
-        //IActionResult returns all types- is generic
         public async Task<IActionResult> Get() 
         {
             return Ok(await db.Tickets.ToListAsync());
-            //400s user error, 500s server error
-            //return Ok("Reading all the tix");
         }
 
         [HttpGet("{id}")]
@@ -48,6 +46,7 @@ namespace CoreWebApp.Controllers
         }
 
         [HttpPost]
+        [Ticket_EnsureDescriptionPresentActionFilterAttribute]
         public async Task<IActionResult> Post([FromBody] Ticket ticket)
         {
             db.Tickets.Add(ticket);
@@ -60,30 +59,9 @@ namespace CoreWebApp.Controllers
                 );
         }
 
-        //[HttpPost]
-        ////[Route("api/tickets")]
-        //public IActionResult PostV1([FromBody] Ticket ticket)
-        //{
-        //    //Ok automatically serializes the obj into json
-        //    return Ok(ticket);
-        //}
-
-
-        //[HttpPost]
-        ////**********should probably be /api/V2/tickets
-        ////v2 uses action filters so that change won't apply to v1
-        //[Route("V2/")]
-        ////add action filter attribute
-        ////[Ticket_EnsureEnteredDate]
-        //public IActionResult PostV2([FromBody] Ticket ticket)
-        //{
-        //    //Ok automatically serializes the obj into json
-        //    return Ok(ticket);
-        //}
-
 
         [HttpPut("{id}")]
-        //[Route("api/tickets")]
+        [Ticket_EnsureDescriptionPresentActionFilter]
         public async Task<IActionResult> Put(int id, [FromBody] Ticket ticket)
         {
             if (id != ticket.TicketId) return BadRequest();
@@ -105,7 +83,6 @@ namespace CoreWebApp.Controllers
         }
 
         [HttpDelete("{id}")]
-        //[Route("api/tickets/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var ticket = await db.Tickets.FindAsync(id);

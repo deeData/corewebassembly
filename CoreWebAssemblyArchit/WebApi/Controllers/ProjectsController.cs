@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace CoreWebApp.Controllers
 {
+    [ApiVersion("1.0")]
     //Model validation happens automatically in the ApiController
     [ApiController]
     [Route("api/[controller]")]

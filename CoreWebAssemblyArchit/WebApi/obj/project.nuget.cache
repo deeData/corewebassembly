@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AJMSjYNODaW36F3WZx5qm9LQdIROOD2aA14LAgNgfN+ap+rYPLORkZACkntSICMldR/asNfFsPoknUZNI6G48w==",
+  "dgSpecHash": "oIEqDDqwWN4B0l5nUJ9RSgJJGXIJeIRJ+wJGKq6/WodWyyktdZ2YkhvhZThCX+AVScUr7C+fOw6Sz61HZ3j7ZA==",
   "success": true,
   "projectFilePath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\deidr\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\deidr\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\deidr\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\deidr\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.10\\microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",

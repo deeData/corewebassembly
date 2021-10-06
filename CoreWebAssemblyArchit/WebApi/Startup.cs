@@ -2,6 +2,7 @@ using DataStore.EF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -39,6 +40,17 @@ namespace CoreWebApp
             //    options.Filters.Add<Version1DiscontinueResourceFilter>();
             //});
             services.AddControllers();
+
+            services.AddApiVersioning(options => {
+                //to include in the response header- what version came back
+                options.ReportApiVersions = true;
+                //version will be in header not url
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                //if no version specified in header, then use version 1,0 (version # is specified at Controller) 1,0 means 1.0
+                options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1,0);
+                //can specify any header but usually starts with X-
+                options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
+            });
         }
 
 
