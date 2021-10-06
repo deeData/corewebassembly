@@ -1,6 +1,7 @@
 ﻿using Core.Models;
 using System;
 using System.Collections.Generic;
+//not part of WebApi so fine for decoupling
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;

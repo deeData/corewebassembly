@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CoreWebApp.Controllers
 {
+    //Model validation happens automatically in the ApiController
     [ApiController]
     [Route("api/[controller]")]
     public class ProjectsController : ControllerBase

@@ -1,0 +1,15 @@
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\DataStore.EF.deps.json
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\DataStore.EF.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\ref\DataStore.EF.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\DataStore.EF.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\Core.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\bin\Debug\net5.0\Core.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.csproj.AssemblyReference.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.AssemblyInfoInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.AssemblyInfo.cs
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.csproj.CoreCompileInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.csproj.CopyComplete
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\ref\DataStore.EF.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\DataStore.EF\obj\Debug\net5.0\DataStore.EF.pdb
