@@ -51,6 +51,16 @@ namespace CoreWebApp
                 //can specify any header but usually starts with X-
                 //options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
             });
+
+            //discover versioning in swagger - see documentation for version formatting options VVV has noth major and minor versioning
+            services.AddVersionedApiExplorer(options => options.GroupNameFormat = " 'v' VVV ");
+            //use all defaults
+            services.AddSwaggerGen();
+
+
+
+
+
         }
 
 
@@ -67,6 +77,13 @@ namespace CoreWebApp
                 //create new in-memory db each time
                 bugsContext.Database.EnsureDeleted();
                 bugsContext.Database.EnsureCreated();
+
+                //swagger in development env only
+                //configure OpenAPI
+                app.UseSwagger(); //generate documentation
+                app.UseSwaggerUI(options => { //configure url for where to generate document
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiName v1");
+                });
             }
 
             app.UseRouting();
