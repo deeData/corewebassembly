@@ -1,0 +1,12 @@
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\bin\Debug\net5.0\App.Repository.webApi.deps.json
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\bin\Debug\net5.0\App.Repository.webApi.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\bin\Debug\net5.0\ref\App.Repository.webApi.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\bin\Debug\net5.0\App.Repository.webApi.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.csproj.AssemblyReference.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.AssemblyInfoInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.AssemblyInfo.cs
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.csproj.CoreCompileInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\ref\App.Repository.webApi.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.Repository.webApi\obj\Debug\net5.0\App.Repository.webApi.pdb
