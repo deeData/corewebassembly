@@ -10,12 +10,15 @@ using System.Threading.Tasks;
 HttpClient httpClient = new();
 IWebApiExecuter apiExecuter = new WebApiExecuter("https://localhost:44349", httpClient);
 
-//TESTING webApi repository requests for data
+//TESTING webApi repository requests for data------- see ProjectRepository.cs
 await GetProjects();
 
 Console.WriteLine("================ reading project tix");
 await GetProjectTickets(2);
 
+int pId = await CreateProject();
+Console.WriteLine($"CREATED PROJECT with ID: {pId}");
+await GetProjects();
 
 
 async Task GetProjects()
@@ -47,7 +50,12 @@ async Task GetProjectTickets(int projectId)
     }
 }
 
-
+async Task<int> CreateProject()
+{
+    var project = new Project { Name = "Another Project" };
+    ProjectRepository repository = new(apiExecuter);
+    return await repository.CreateAsync(project);
+}
 
 
 

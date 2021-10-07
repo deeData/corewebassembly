@@ -35,6 +35,11 @@ namespace App.Repository.webApi
             return await webApiExecuter.InvokeGet<IEnumerable<Ticket>>($"api/projects/{projectId}/tickets");
         }
 
+        public async Task<int> CreateAsync(Project project) 
+        {
+            project = await webApiExecuter.InvokePost("api/projects", project);
+            return project.ProjectId;
+        }
 
 
 
