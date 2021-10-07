@@ -33,8 +33,12 @@ namespace App.Repository.webApi.ApiClient
         public async Task<T> InvokePost<T>(string uri, T obj)
         {
             var response = await httpClient.PostAsJsonAsync(GetUrl(uri), obj);
+
             //will throw exception if response is not successful
-            response.EnsureSuccessStatusCode();
+            //response.EnsureSuccessStatusCode();
+
+            //handle exception to show error message thrown back to caller
+            await HandleError(response);
 
             return await response.Content.ReadFromJsonAsync<T>();
         }
@@ -42,14 +46,14 @@ namespace App.Repository.webApi.ApiClient
         public async Task InvokePut<T>(string uri, T obj)
         {
             var response = await httpClient.PutAsJsonAsync(GetUrl(uri), obj);
-            response.EnsureSuccessStatusCode();
+            await HandleError(response);
 
         }
 
         public async Task InvokeDelete(string uri)
         {
             var response = await httpClient.DeleteAsync(GetUrl(uri));
-            response.EnsureSuccessStatusCode();
+            await HandleError(response);
 
         }
 
@@ -59,7 +63,15 @@ namespace App.Repository.webApi.ApiClient
             return $"{baseUrl}/{uri}";
         }
 
-
+        //will include a detailed error message in the exception thrown back
+        private async Task HandleError(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException(error);
+            }
+        }
 
 
 
