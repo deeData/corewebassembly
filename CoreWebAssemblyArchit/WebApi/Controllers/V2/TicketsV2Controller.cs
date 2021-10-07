@@ -6,7 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.OData;
 using WebApi.Filters.V2;
+using WebApi.QueryFilters;
 
 namespace CoreWebApp.Controllers.V2
 {
@@ -29,11 +31,30 @@ namespace CoreWebApp.Controllers.V2
         }
 
 
-
-        [HttpGet]
-        public async Task<IActionResult> Get() 
+        //[EnableQuery] //tickets?$filter=id gt 1-- can replace the filter code below (library still in preview)
+        [HttpGet] 
+        public async Task<IActionResult> Get([FromQuery] TicketQueryFilter ticketQueryFilter) 
         {
-            return Ok(await db.Tickets.ToListAsync());
+            //dbSet implements IQueryable
+            IQueryable<Ticket> tickets = db.Tickets;
+            //can set the filters here
+            if (ticketQueryFilter != null)
+            {
+                //if a filter exists
+                if (ticketQueryFilter.Id.HasValue)
+                    tickets = tickets.Where(x => x.TicketId == ticketQueryFilter.Id);
+                //if contains in title to search/filter
+                if (!string.IsNullOrWhiteSpace(ticketQueryFilter.Title))
+                    tickets = tickets.Where(x => x.Title.Contains(ticketQueryFilter.Title,
+                        StringComparison.OrdinalIgnoreCase));
+                //if contains in description to search/filter
+                if (!string.IsNullOrWhiteSpace(ticketQueryFilter.Description))
+                    tickets = tickets.Where(x => x.Title.Contains(ticketQueryFilter.Description,
+                        StringComparison.OrdinalIgnoreCase));
+            }
+
+            //ex. https://localhost:5001/api/tickets?title=1&api-version=2.0
+            return Ok(await tickets.ToListAsync());
         }
 
         [HttpGet("{id}")]

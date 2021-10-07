@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{904F25F0-7DAF-413D-A310-8B8B813ECE53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStore.EF", "DataStore.EF\DataStore.EF.csproj", "{6330C776-9ECD-4283-B6B4-348799586021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStore.EF", "DataStore.EF\DataStore.EF.csproj", "{6330C776-9ECD-4283-B6B4-348799586021}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
