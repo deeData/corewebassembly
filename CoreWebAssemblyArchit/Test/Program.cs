@@ -25,6 +25,9 @@ await UpdateProject(project);
 Console.WriteLine($"================ update project id {pId}");
 await GetProjects();
 
+Console.WriteLine($"================ delete project id {pId}");
+await DeleteProject(pId);
+await GetProjects();
 
 
 async Task GetProjects()
@@ -70,4 +73,8 @@ async Task UpdateProject(Project project)
     await repository.UpdateAsync(project);
 }
 
-
+async Task DeleteProject(int projectId)
+{
+    ProjectRepository repository = new(apiExecuter);
+    await repository.DeleteAsync(projectId);
+}
