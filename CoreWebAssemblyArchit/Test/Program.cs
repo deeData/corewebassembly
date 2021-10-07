@@ -20,6 +20,12 @@ int pId = await CreateProject();
 Console.WriteLine($"CREATED PROJECT with ID: {pId}");
 await GetProjects();
 
+var project = await GetProject(pId);
+await UpdateProject(project);
+Console.WriteLine($"================ update project id {pId}");
+await GetProjects();
+
+
 
 async Task GetProjects()
 {
@@ -57,6 +63,11 @@ async Task<int> CreateProject()
     return await repository.CreateAsync(project);
 }
 
-
+async Task UpdateProject(Project project)
+{
+    ProjectRepository repository = new(apiExecuter);
+    project.Name += " UPDATED";
+    await repository.UpdateAsync(project);
+}
 
 

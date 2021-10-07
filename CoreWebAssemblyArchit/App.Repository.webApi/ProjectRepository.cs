@@ -41,7 +41,10 @@ namespace App.Repository.webApi
             return project.ProjectId;
         }
 
-
+        public async Task UpdateAsync(Project project)
+        {
+            await webApiExecuter.InvokePut($"api/projects/{project.ProjectId}", project);
+        }
 
 
     }
