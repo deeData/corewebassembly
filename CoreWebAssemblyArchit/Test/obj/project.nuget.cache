@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "dLhhfIfmSipvJuQOWRpMTCrGUD0iTW6N3Tu0U/BjX7lyRJYfUASbyatxhWDvB+wkFv6KX4d44I50da0RjpWzsg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\Test\\Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\deidr\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

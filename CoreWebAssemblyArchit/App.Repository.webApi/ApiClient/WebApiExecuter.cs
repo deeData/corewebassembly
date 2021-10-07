@@ -6,10 +6,11 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 
+//can place this is a separate library to reuse
 namespace App.Repository.webApi.ApiClient
 {
     //helper class
-    class WebApiExecuter
+    public class WebApiExecuter : IWebApiExecuter
     {
         private readonly string baseUrl;
         private readonly HttpClient httpClient;
@@ -23,13 +24,13 @@ namespace App.Repository.webApi.ApiClient
             httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<T> InvokeGet<T>(string uri) 
+        public async Task<T> InvokeGet<T>(string uri)
         {
             //gets content from reponse and returns it in type T
             return await httpClient.GetFromJsonAsync<T>(GetUrl(uri));
         }
 
-        public async Task<T> InvokePost<T>(string uri, T obj) 
+        public async Task<T> InvokePost<T>(string uri, T obj)
         {
             var response = await httpClient.PostAsJsonAsync(GetUrl(uri), obj);
             //will throw exception if response is not successful
@@ -45,7 +46,7 @@ namespace App.Repository.webApi.ApiClient
 
         }
 
-        public async Task InvokeDelete<T>(string uri)
+        public async Task InvokeDelete(string uri)
         {
             var response = await httpClient.DeleteAsync(GetUrl(uri));
             response.EnsureSuccessStatusCode();

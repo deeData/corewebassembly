@@ -6,6 +6,16 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "Test/1.0.0": {
+        "dependencies": {
+          "App.Repository.webApi": "1.0.0",
+          "Core": "1.0.0"
+        },
+        "runtime": {
+          "Test.dll": {}
+        }
+      },
+      "System.Net.Http.Json/5.0.0": {},
       "App.Repository.webApi/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
@@ -15,7 +25,6 @@
           "App.Repository.webApi.dll": {}
         }
       },
-      "System.Net.Http.Json/5.0.0": {},
       "Core/1.0.0": {
         "runtime": {
           "Core.dll": {}
@@ -24,7 +33,7 @@
     }
   },
   "libraries": {
-    "App.Repository.webApi/1.0.0": {
+    "Test/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -35,6 +44,11 @@
       "sha512": "sha512-3CPSQpCzEmI9o+1G79TnPCjF40omCdnoXj2Rg76BDwGj5+LZnFPjV+t35eedlvl+uthmholk/XXxXTYgJWSexw==",
       "path": "system.net.http.json/5.0.0",
       "hashPath": "system.net.http.json.5.0.0.nupkg.sha512"
+    },
+    "App.Repository.webApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Core/1.0.0": {
       "type": "project",
