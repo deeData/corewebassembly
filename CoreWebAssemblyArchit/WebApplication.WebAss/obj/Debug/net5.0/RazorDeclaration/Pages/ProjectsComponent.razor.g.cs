@@ -105,18 +105,19 @@ using MyApp.ApplicationLogic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 5 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\ProjectsComponent.razor"
+#line 21 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\ProjectsComponent.razor"
        
     IEnumerable<Project> projects;
 
-    protected override async Task OnInitializedAsync() 
+    protected override async Task OnInitializedAsync()
     {
-        
+        projects = await ProjectsScreenUseCases.ViewProjectsAsync();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProjectsScreenUseCases ProjectsScreenUseCases { get; set; }
     }
 }
 #pragma warning restore 1591

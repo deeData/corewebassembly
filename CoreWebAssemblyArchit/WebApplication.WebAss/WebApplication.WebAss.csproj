@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\App.ApplicationLogic\MyApp.ApplicationLogic.csproj" />
+    <ProjectReference Include="..\App.Repository.webApi\App.Repository.webApi.csproj" />
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 

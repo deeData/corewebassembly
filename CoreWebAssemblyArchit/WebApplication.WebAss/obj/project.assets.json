@@ -1230,6 +1230,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "App.Repository.webApi >= 1.0.0",
       "Core >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.9",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.9",
@@ -1271,6 +1272,9 @@
           "projectReferences": {
             "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\MyApp.ApplicationLogic.csproj": {
               "projectPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\MyApp.ApplicationLogic.csproj"
+            },
+            "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.Repository.webApi\\App.Repository.webApi.csproj": {
+              "projectPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.Repository.webApi\\App.Repository.webApi.csproj"
             },
             "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\Core\\Core.csproj": {
               "projectPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\Core\\Core.csproj"
