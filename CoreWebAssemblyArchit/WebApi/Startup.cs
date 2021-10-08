@@ -64,7 +64,15 @@ namespace CoreWebApp
                 options.SwaggerDoc("v2", new OpenApiInfo { Title = "My Web API v2", Version = "version 2" });
             });
 
-
+            //set CORS policy for incoming requests
+            services.AddCors(options => {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("https://localhost:44322")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
+            });
 
 
         }
@@ -96,6 +104,8 @@ namespace CoreWebApp
             }
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
