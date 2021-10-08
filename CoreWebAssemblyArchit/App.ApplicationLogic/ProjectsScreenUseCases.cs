@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace App.ApplicationLogic
+namespace MyApp.ApplicationLogic
 {
-    class ProjectsScreenUseCases
+    public class ProjectsScreenUseCases : IProjectsScreenUseCases
     {
         private readonly IProjectRepository projectRepository;
 
@@ -25,7 +25,7 @@ namespace App.ApplicationLogic
 
 
 
-         
+
 
 
 

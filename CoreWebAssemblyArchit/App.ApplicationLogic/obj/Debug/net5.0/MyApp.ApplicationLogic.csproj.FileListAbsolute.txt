@@ -1,0 +1,17 @@
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\MyApp.ApplicationLogic.deps.json
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\MyApp.ApplicationLogic.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\ref\MyApp.ApplicationLogic.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\MyApp.ApplicationLogic.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\App.Repository.webApi.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\Core.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\App.Repository.webApi.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\bin\Debug\net5.0\Core.pdb
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.csproj.AssemblyReference.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.AssemblyInfoInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.AssemblyInfo.cs
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.csproj.CoreCompileInputs.cache
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.csproj.CopyComplete
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\ref\MyApp.ApplicationLogic.dll
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\App.ApplicationLogic\obj\Debug\net5.0\MyApp.ApplicationLogic.pdb

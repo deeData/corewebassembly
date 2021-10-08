@@ -84,9 +84,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\App.ApplicationLogic.csproj",
-      "projectName": "App.ApplicationLogic",
-      "projectPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\App.ApplicationLogic.csproj",
+      "projectUniqueName": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\MyApp.ApplicationLogic.csproj",
+      "projectName": "MyApp.ApplicationLogic",
+      "projectPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\MyApp.ApplicationLogic.csproj",
       "packagesPath": "C:\\Users\\deidr\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\obj\\",
       "projectStyle": "PackageReference",

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MyApp.ApplicationLogic</RootNamespace>
+    <AssemblyName>MyApp.ApplicationLogic</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

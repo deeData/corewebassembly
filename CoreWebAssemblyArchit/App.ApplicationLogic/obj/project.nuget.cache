@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nMlvE7jRtHBP7g5BdniNtjkir8MzD2cwdkzdVT49qYfdnccSNcGLtxSmDy+7UuUU7UR81upatjiC8/FzEHtBDg==",
+  "dgSpecHash": "WS6wkMvNlucNdgRv/DkzURVZ0tNmELKrdyvHfqCBbQz2UL/vgSMkQo+ittuhhhMJxI8LVDIcgQM3kVV8LmOPyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\App.ApplicationLogic.csproj",
+  "projectFilePath": "C:\\Users\\deidr\\source\\repos\\CoreWebAssemblyArchit\\CoreWebAssemblyArchit\\App.ApplicationLogic\\MyApp.ApplicationLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\deidr\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
   ],
