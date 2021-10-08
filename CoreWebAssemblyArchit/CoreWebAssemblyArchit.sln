@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Repository.webApi", "Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{9BA89F14-12A6-49A2-A949-6772C82B86AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.ApplicationLogic", "App.ApplicationLogic\App.ApplicationLogic.csproj", "{0415E99E-3738-43A6-A846-DB20636BFF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.WebAssembly", "App.WebAssembly\App.WebAssembly.csproj", "{46D77DC4-BE72-46A4-A5EF-7314F29BB3D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{9BA89F14-12A6-49A2-A949-6772C82B86AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BA89F14-12A6-49A2-A949-6772C82B86AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BA89F14-12A6-49A2-A949-6772C82B86AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0415E99E-3738-43A6-A846-DB20636BFF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0415E99E-3738-43A6-A846-DB20636BFF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0415E99E-3738-43A6-A846-DB20636BFF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0415E99E-3738-43A6-A846-DB20636BFF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D77DC4-BE72-46A4-A5EF-7314F29BB3D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D77DC4-BE72-46A4-A5EF-7314F29BB3D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D77DC4-BE72-46A4-A5EF-7314F29BB3D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D77DC4-BE72-46A4-A5EF-7314F29BB3D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

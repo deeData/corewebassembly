@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace App.Repository.webApi
 {
     //implemented V2 Ticket
-    public class TicketRepository
+    public class TicketRepository : ITicketRepository
     {
         private readonly IWebApiExecuter webApiExecuter;
 

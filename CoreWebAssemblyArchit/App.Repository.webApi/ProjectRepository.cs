@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace App.Repository.webApi
 {
-    public class ProjectRepository 
+    public class ProjectRepository : IProjectRepository
     {
         private readonly IWebApiExecuter webApiExecuter;
 
@@ -19,23 +19,23 @@ namespace App.Repository.webApi
             this.webApiExecuter = webApiExecuter;
         }
 
-        public async Task<IEnumerable<Project>> GetAsync() 
+        public async Task<IEnumerable<Project>> GetAsync()
         {
             return await webApiExecuter.InvokeGet<IEnumerable<Project>>("api/projects");
-        
+
         }
 
-        public async Task<Project> GetByIdAsync(int id) 
+        public async Task<Project> GetByIdAsync(int id)
         {
             return await webApiExecuter.InvokeGet<Project>($"api/projects/{id}");
         }
 
-        public async Task<IEnumerable<Ticket>> GetProjectTicketsAsync(int projectId) 
+        public async Task<IEnumerable<Ticket>> GetProjectTicketsAsync(int projectId)
         {
             return await webApiExecuter.InvokeGet<IEnumerable<Ticket>>($"api/projects/{projectId}/tickets");
         }
 
-        public async Task<int> CreateAsync(Project project) 
+        public async Task<int> CreateAsync(Project project)
         {
             project = await webApiExecuter.InvokePost("api/projects", project);
             return project.ProjectId;

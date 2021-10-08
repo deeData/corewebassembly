@@ -29,6 +29,8 @@ Console.WriteLine($"================ delete project id {pId}");
 await DeleteProject(pId);
 await GetProjects();
 
+Console.WriteLine($"==============TEST TICKETS===============");
+await TestTickets();
 
 async Task GetProjects()
 {
