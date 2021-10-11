@@ -1,13 +1,33 @@
-﻿@page "/project/{projectId:int}/tickets"
+﻿@page "/projects/{projectId:int}/tickets"
+
+@inject ITicketScreenUseCases TicketsScreenUseCases
 
     <h3>Tickets</h3>
 
-    Projects Id: @ProjectId
+@if (tickets!=null)
+{
+    <ul>
+        @foreach (var ticket in tickets)
+        {
+        <li>
+            @ticket.Title
+        </li>
+        }
+    </ul>
+}
 
-    @code {
-        //to bind the id from the route to this property param
-        [Parameter]
-        public int ProjectId { get; set; }
+@code {
 
-        //ITicketScreenUseCases
+    IEnumerable<Ticket> tickets;
+
+    //to bind the id from the route to this property param
+    [Parameter]
+    public int ProjectId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        tickets = await TicketsScreenUseCases.ViewTickets(ProjectId);
     }
+
+
+}

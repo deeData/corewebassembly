@@ -105,7 +105,7 @@ using MyApp.ApplicationLogic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\ProjectsComponent.razor"
+#line 25 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\ProjectsComponent.razor"
        
     IEnumerable<Project> projects;
 

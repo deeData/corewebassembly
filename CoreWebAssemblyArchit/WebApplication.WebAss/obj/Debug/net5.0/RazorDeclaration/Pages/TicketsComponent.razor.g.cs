@@ -96,7 +96,7 @@ using MyApp.ApplicationLogic;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/project/{projectId:int}/tickets")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/projects/{projectId:int}/tickets")]
     public partial class TicketsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -105,18 +105,26 @@ using MyApp.ApplicationLogic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 7 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\TicketsComponent.razor"
-           
-        //to bind the id from the route to this property param
-        [Parameter]
-        public int ProjectId { get; set; }
+#line 19 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\TicketsComponent.razor"
+       
 
-        //ITicketScreenUseCases
-    
+    IEnumerable<Ticket> tickets;
+
+    //to bind the id from the route to this property param
+    [Parameter]
+    public int ProjectId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        tickets = await TicketsScreenUseCases.ViewTickets(ProjectId);
+    }
+
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ITicketScreenUseCases TicketsScreenUseCases { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -22,17 +22,20 @@ namespace WebApplication.WebAss
             //root component is App.razor
             builder.RootComponents.Add<App>("#app");
 
+            //above class is dependent on this library-- webApiExecuter should be a singleton with httpClient, need to change to diff signature
+            builder.Services.AddSingleton<IWebApiExecuter, WebApiExecuter>(sp => new WebApiExecuter(
+                    "https://localhost:44349", new HttpClient()));
+
             //need to add libraries for dependency injection
             //transient creates a new instance each time
             builder.Services.AddTransient<IProjectsScreenUseCases, ProjectsScreenUseCases>();
             //above class is dependent on the repository library
             builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
-            //above class is dependent on this library-- webApiExecuter should be a singleton with httpClient, need to change to diff signature
-            builder.Services.AddSingleton<IWebApiExecuter, WebApiExecuter>(sp => new WebApiExecuter(
-                    "https://localhost:44349", new HttpClient()));
+            //for DI in razor component
+            builder.Services.AddTransient<ITicketScreenUseCases, TicketScreenUseCases>();
 
             //in webassembly, scope is also singleton
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            //builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();
         }

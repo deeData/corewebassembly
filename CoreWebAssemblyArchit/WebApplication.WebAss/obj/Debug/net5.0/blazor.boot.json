@@ -198,14 +198,14 @@
       "App.Repository.webApi.dll": "sha256-LvjydETHNZMkKV+9BJSWXtAguF+QGNWvx1w7Sw7Fs6A=",
       "Core.dll": "sha256-rbb0\/r4TcVWOD\/lw9zCyn077H57ZPvU3i+OZEkDBmr8=",
       "MyApp.ApplicationLogic.dll": "sha256-X095xKrHYX+CaLamKWup7hJxsJSd7TqllTEGRjlSEm0=",
-      "WebApplication.WebAss.dll": "sha256-JedEapWNpCGpK\/KJmps5z69T\/eukBw3enKfkH9xgZfQ="
+      "WebApplication.WebAss.dll": "sha256-J43lWXWOz2z\/961vTUScRodKr6MQcZw4ZX3ckIGpCwE="
     },
     "lazyAssembly": null,
     "pdb": {
       "MyApp.ApplicationLogic.pdb": "sha256-OldTG4qSenO67k4EOV\/ed4TzkOOtGG+wGnSRYNulAKU=",
       "App.Repository.webApi.pdb": "sha256-+PW0\/hx0vHKQeNP5UOXm1a4XxgnvN4JyD88jIaZqZis=",
       "Core.pdb": "sha256-wHf8GqQcDplOqs9b5S8g5Eky7uvZN3wTupFuxJnqa5U=",
-      "WebApplication.WebAss.pdb": "sha256-JX9N9S2lstWij63Ql37BKzSslHDa1sjNHYK7TByKUdA="
+      "WebApplication.WebAss.pdb": "sha256-WdE4VsLhGEmGzyBANTL2zIRKHD+Q3XmZTQTbinjqo+c="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",
