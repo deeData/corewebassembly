@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStore.EF", "DataStore.EF\DataStore.EF.csproj", "{6330C776-9ECD-4283-B6B4-348799586021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Repository.webApi", "App.Repository.webApi\App.Repository.webApi.csproj", "{6A1EE41F-A803-4C7E-B9E6-D44C6466AEA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Repository.webApi", "App.Repository.webApi\App.Repository.webApi.csproj", "{6A1EE41F-A803-4C7E-B9E6-D44C6466AEA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{9BA89F14-12A6-49A2-A949-6772C82B86AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{9BA89F14-12A6-49A2-A949-6772C82B86AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.ApplicationLogic", "App.ApplicationLogic\MyApp.ApplicationLogic.csproj", "{0415E99E-3738-43A6-A846-DB20636BFF33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyApp.ApplicationLogic", "App.ApplicationLogic\MyApp.ApplicationLogic.csproj", "{0415E99E-3738-43A6-A846-DB20636BFF33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication.WebAss", "WebApplication.WebAss\WebApplication.WebAss.csproj", "{2D6766AC-E00E-4B1A-9E24-511FC9DE0647}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication.WebAss", "WebApplication.WebAss\WebApplication.WebAss.csproj", "{2D6766AC-E00E-4B1A-9E24-511FC9DE0647}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

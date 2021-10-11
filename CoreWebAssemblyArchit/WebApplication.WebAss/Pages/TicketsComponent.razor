@@ -1,0 +1,13 @@
+﻿@page "/project/{projectId:int}/tickets"
+
+    <h3>Tickets</h3>
+
+    Projects Id: @ProjectId
+
+    @code {
+        //to bind the id from the route to this property param
+        [Parameter]
+        public int ProjectId { get; set; }
+
+        //ITicketScreenUseCases
+    }
