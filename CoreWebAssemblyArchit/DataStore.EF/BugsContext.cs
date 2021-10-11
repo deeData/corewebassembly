@@ -30,9 +30,9 @@ namespace DataStore.EF
                 );
 
             modelBuilder.Entity<Ticket>().HasData(
-             new Ticket { TicketId = 1, Title = "Bug #1", ProjectId = 1 },
-             new Ticket { TicketId = 2, Title = "Bug #2", ProjectId = 1 },
-             new Ticket { TicketId = 3, Title = "Bug #3", ProjectId = 2 }
+             new Ticket { TicketId = 1, Title = "Bug #1", ProjectId = 1, Owner = "Dee", ReportDate = new DateTime(2021, 1, 1), DueDate = new DateTime(2021, 2, 1) },
+             new Ticket { TicketId = 2, Title = "Bug #2", ProjectId = 1, Owner = "Sheila", ReportDate = new DateTime(2021, 3, 1), DueDate = new DateTime(2021, 12, 1) },
+             new Ticket { TicketId = 3, Title = "Bug #3", ProjectId = 2, Owner = "Elsa", ReportDate = new DateTime(2021, 1, 31), DueDate = new DateTime(2021, 12, 15) }
              );
 
             //During development we are using in-memory database- install EF InMemory and wire it in Startup.cs

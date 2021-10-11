@@ -1,0 +1,26 @@
+﻿
+@if (Ticket != null)
+{
+    <tr>
+        <td>
+            @Ticket.Title
+        </td>
+        <td>
+            @Ticket.Owner
+        </td>
+        <td>
+            @(Ticket.ReportDate.HasValue ? Ticket.ReportDate.Value.ToString("yyyy-MM-dd") : string.Empty )
+        </td>
+        <td>
+            @(Ticket.DueDate.HasValue ? Ticket.DueDate.Value.ToString("yyyy-MM-dd") : string.Empty )
+        </td>
+    </tr>
+}
+
+
+@code {
+    //parent component will pass to child component
+    [Parameter]
+    public Ticket Ticket { get; set; }
+
+}

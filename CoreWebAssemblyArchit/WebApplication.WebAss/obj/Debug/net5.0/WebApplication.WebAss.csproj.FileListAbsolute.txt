@@ -644,3 +644,5 @@ C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebAppli
 C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\obj\Debug\net5.0\build-gz\MDB7yk+8.gz
 C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\obj\Debug\net5.0\RazorDeclaration\Pages\TicketsComponent.razor.g.cs
 C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\obj\Debug\net5.0\Razor\Pages\TicketsComponent.razor.g.cs
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\obj\Debug\net5.0\RazorDeclaration\Controls\TicketRowComponent.razor.g.cs
+C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\obj\Debug\net5.0\Razor\Controls\TicketRowComponent.razor.g.cs

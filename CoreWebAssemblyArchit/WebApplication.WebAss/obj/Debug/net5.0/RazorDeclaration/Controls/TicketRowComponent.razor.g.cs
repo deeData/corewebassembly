@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApplication.WebAss.Shared
+namespace WebApplication.WebAss.Controls
 {
     #line hidden
     using System;
@@ -103,13 +103,24 @@ using WebApplication.WebAss.Controls;
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    public partial class TicketRowComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 21 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Controls\TicketRowComponent.razor"
+       
+    //parent component will pass to child component
+    [Parameter]
+    public Ticket Ticket { get; set; }
+
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

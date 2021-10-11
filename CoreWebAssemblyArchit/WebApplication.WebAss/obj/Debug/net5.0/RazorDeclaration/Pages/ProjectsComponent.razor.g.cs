@@ -96,6 +96,13 @@ using MyApp.ApplicationLogic;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\_Imports.razor"
+using WebApplication.WebAss.Controls;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class ProjectsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {

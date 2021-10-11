@@ -96,6 +96,13 @@ using MyApp.ApplicationLogic;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\_Imports.razor"
+using WebApplication.WebAss.Controls;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/projects/{projectId:int}/tickets")]
     public partial class TicketsComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,7 +112,7 @@ using MyApp.ApplicationLogic;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 19 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\TicketsComponent.razor"
+#line 29 "C:\Users\deidr\source\repos\CoreWebAssemblyArchit\CoreWebAssemblyArchit\WebApplication.WebAss\Pages\TicketsComponent.razor"
        
 
     IEnumerable<Ticket> tickets;

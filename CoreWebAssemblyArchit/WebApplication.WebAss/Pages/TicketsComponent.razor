@@ -2,18 +2,28 @@
 
 @inject ITicketScreenUseCases TicketsScreenUseCases
 
-    <h3>Tickets</h3>
+<h3>Tickets</h3>
 
-@if (tickets!=null)
+@if (tickets != null)
 {
-    <ul>
-        @foreach (var ticket in tickets)
-        {
-        <li>
-            @ticket.Title
-        </li>
-        }
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Owner</th>
+                <th>Report Date</th>
+                <th>Due Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ticket in tickets)
+            {
+                <TicketRowComponent Ticket="ticket"></TicketRowComponent>
+            }
+        </tbody>
+    </table>
+
+
 }
 
 @code {
